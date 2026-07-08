@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #182235;
+      padding: 15px 25px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #4f8cff;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cbd5e1;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #4f8cff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #3b73d1;
+    }
+
+    .card {
+      background: #182235;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #182235;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>iOS Hub</h1>
+    <p>Welcome to iOS Hub. This site is where I share my Apple Shortcuts and other iOS-related downloads.</p>
+    <a class="button" href="#downloads">View Downloads</a>
+  </section>
+
+  <section id="downloads">
+    <h1>Downloads</h1>
+    <p>Install my Apple Shortcut using the link below.</p>
+
+    <div class="card">
+      <h2>My Shortcut</h2>
+      <p>Tap the button below to open the iCloud Shortcut link.</p>
+      <a class="button" href="YOUR_ICLOUD_SHORTCUT_LINK">Open Shortcut</a>
+    </div>
+  </section>
+
+  <footer>
+     2026 iOS Hub
+  </footer>
+
+</body>
+</html>
