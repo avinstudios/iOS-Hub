@@ -10,5 +10,5 @@ We made stuff for every iOS version starting from iOS 26
 
 # 📀 How Get IOS Hub
 -------------------------------------------
-• Go to the Releases Page and click on the version for your IOS
+• Go to the Download Page and click on the version for your IOS
 • The Wrong version WON'T WORK
