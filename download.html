@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads — iOS-Hub</title>
+
+<style>
+  :root {
+    --bg: #06070b;
+    --glass: rgba(255,255,255,0.06);
+    --glass-border: rgba(255,255,255,0.14);
+    --blue: #4d9fff;
+    --violet: #a06bff;
+    --cyan: #4de3ff;
+    --green: #4de3a0;
+    --text-dim: rgba(235,238,245,0.62);
+    --text: #eef0f5;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  .mesh {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(38vw 38vw at 12% 8%, rgba(77,159,255,0.30), transparent 60%),
+      radial-gradient(46vw 46vw at 88% 18%, rgba(160,107,255,0.24), transparent 60%),
+      radial-gradient(40vw 40vw at 50% 95%, rgba(77,227,255,0.16), transparent 60%),
+      var(--bg);
+    animation: drift 22s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    0%   { filter: hue-rotate(0deg) brightness(1); }
+    100% { filter: hue-rotate(12deg) brightness(1.06); }
+  }
+  @media (prefers-reduced-motion: reduce) { .mesh { animation: none; } }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    background: rgba(6,7,11,0.55);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  nav {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(120deg, var(--blue), var(--violet) 60%, var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    transition: color .2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+  .nav-links a.active { color: var(--text); }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+  .page-head { padding: 72px 0 40px; text-align: center; }
+  h1 {
+    font-size: clamp(34px, 7vw, 48px);
+    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+    font-weight: 800;
+    background: linear-gradient(120deg, #ffffff 30%, #b9c6ff 70%, var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .page-head p {
+    color: var(--text-dim);
+    font-size: 16.5px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 10px 0 90px;
+  }
+
+  .vcard {
+    position: relative;
+    padding: 26px;
+    border-radius: 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 20px 40px -20px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .vcard::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: 20px;
+    background: linear-gradient(140deg, rgba(77,159,255,0.5), transparent 40%, rgba(160,107,255,0.35));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .vcard.disabled { opacity: 0.55; }
+
+  .v-left { display: flex; align-items: center; gap: 16px; }
+  .v-icon {
+    width: 46px; height: 46px;
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(140deg, rgba(77,159,255,0.35), rgba(160,107,255,0.25));
+    border: 1px solid var(--glass-border);
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .v-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .v-title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 3px; }
+  .v-sub { font-size: 13.5px; color: var(--text-dim); }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-top: 6px;
+  }
+  .status.live { color: var(--green); background: rgba(77,227,160,0.14); border: 1px solid rgba(77,227,160,0.3); }
+  .status.soon { color: var(--text-dim); background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    white-space: nowrap;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary {
+    color: #06070b;
+    background: linear-gradient(120deg, var(--cyan), var(--blue));
+    box-shadow: 0 8px 24px rgba(77,159,255,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-disabled {
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    pointer-events: none;
+  }
+
+  .note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 13.5px;
+    line-height: 1.7;
+    padding-top: 6px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 24px 50px;
+    color: rgba(235,238,245,0.35);
+    font-size: 13px;
+  }
+
+  @media (max-width: 520px) {
+    .vcard { padding: 20px; }
+    .v-left { width: 100%; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="mesh"></div>
+
+<header>
+  <nav>
+    <span class="logo">iOS-Hub</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="download.html" class="active">Download</a>
+      <a href="development.html">Development</a>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section class="page-head">
+    <h1>Grab your version</h1>
+    <p>Match the card below to the iOS version you're running. Installing the wrong one won't work.</p>
+  </section>
+
+  <section class="grid">
+
+    <div class="vcard">
+      <div class="v-left">
+        <span class="v-icon"><img src="assets/ios26-icon.png" alt="iOS 26 icon"></span>
+        <div>
+          <p class="v-title">iOS 26</p>
+          <span class="status live">● Available now</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="https://www.icloud.com/shortcuts/f5e2dc8f7f6d432b823551c26ef0d3de">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M6 11l6 6 6-6"/><path d="M5 21h14"/></svg>
+        Get Now
+      </a>
+    </div>
+
+  </section>
+
+  <p class="note">Requires iOS 26 or later. Check Settings → General → About → Software Version to confirm yours.</p>
+
+  <p style="text-align:center; margin-top: 18px;">
+    <a href="legacy.html" style="color: var(--text-dim); font-size: 13.5px; text-decoration: underline; text-underline-offset: 3px;">Legacy Mode</a>
+  </p>
+
+</div>
+
+<footer>
+  iOS-Hub · a Phone Manager Shortcut project
+</footer>
+
+</body>
+</html>
