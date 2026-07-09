@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>iOS-Hub :: Legacy Download Page</title>
+<style>
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: #c0c0c0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23c0c0c0'/%3E%3Crect width='2' height='2' fill='%23b8b8b8'/%3E%3C/svg%3E");
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+    padding: 20px 12px calc(20px + env(safe-area-inset-bottom));
+    padding-left: calc(12px + env(safe-area-inset-left));
+    padding-right: calc(12px + env(safe-area-inset-right));
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 3px double #000080;
+    background: #ffffff;
+  }
+
+  .titlebar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .banner {
+    text-align: center;
+    padding: 14px 10px 6px;
+    border-bottom: 2px solid #000080;
+  }
+  .banner h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #0000ee;
+    text-shadow: 1px 1px 0 #999;
+    letter-spacing: 1px;
+    word-break: break-word;
+  }
+  .banner .blink {
+    color: #ff0000;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .marquee-bar {
+    background: #000;
+    color: #0f0;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    padding: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 2px solid #000080;
+    width: 100%;
+  }
+  .marquee-bar span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 12s linear infinite;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .content {
+    padding: 18px 20px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .content hr {
+    border: none;
+    border-top: 2px groove #999;
+    margin: 16px 0;
+  }
+
+  .under-construction {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #000;
+    background: #ffff00;
+    border: 2px solid #000;
+    padding: 4px 8px;
+    margin-bottom: 14px;
+  }
+  .caution-stripe {
+    width: 12px; height: 9px;
+    background: repeating-linear-gradient(45deg, #000, #000 3px, #ffff00 3px, #ffff00 6px);
+    border: 1px solid #000;
+    flex-shrink: 0;
+  }
+
+  ul.old-list {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  ul.old-list li { margin-bottom: 6px; }
+
+  .btn-3d {
+    display: block;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    background: #c0c0c0;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #404040;
+    border-bottom: 3px solid #404040;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .btn-3d:active {
+    border-top: 3px solid #404040;
+    border-left: 3px solid #404040;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+  }
+
+  .center { text-align: center; }
+
+  .footer-strip {
+    background: #000080;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 10.5px;
+    text-align: center;
+    padding: 9px 8px;
+    border-top: 2px solid #000;
+  }
+  .footer-strip a { color: #99ccff; }
+
+  .counter {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #0f0;
+    padding: 2px 6px;
+    letter-spacing: 2px;
+    border: 1px solid #333;
+    font-size: 13px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 14px 0;
+    flex-wrap: wrap;
+  }
+  .badge-88 {
+    width: 82px; height: 29px;
+    background: #000;
+    color: #0f0;
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  a { color: #0000ee; }
+  a:visited { color: #551a8b; }
+
+  @media (max-width: 400px) {
+    body { padding: 10px 8px calc(10px + env(safe-area-inset-bottom)); }
+    .banner h1 { font-size: 22px; }
+    .content { padding: 14px 12px; }
+    .badge-88 { width: 74px; height: 27px; font-size: 8.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="titlebar">iOS-Hub.exe — Legacy Download Page</div>
+
+  <div class="banner">
+    <h1>~ iOS-Hub ~</h1>
+    <div class="blink">*** LEGACY MODE ***</div>
+  </div>
+
+  <div class="marquee-bar"><span>WELCOME TO THE LEGACY DOWNLOAD PAGE *** NO FRILLS, NO FLASH, JUST THE LINK *** WORKS ON ANY BROWSER, ANY DEVICE, ANY YEAR *** </span></div>
+
+  <div class="content">
+
+    <div class="under-construction">
+      <span class="caution-stripe"></span> THIS PAGE IS INTENTIONALLY OLD-SCHOOL <span class="caution-stripe"></span>
+    </div>
+
+    <p>Welcome, traveler. You have reached the <b>Legacy Download Page</b> for iOS-Hub. This page was built for maximum compatibility — no glass, no gradients, no fancy animations. Just a link that works.</p>
+
+    <hr>
+
+    <p><b>Why use Legacy Mode?</b></p>
+    <ul class="old-list">
+      <li>Slow connection? This page loads instantly.</li>
+      <li>Old device or browser? This page doesn't care.</li>
+      <li>Just want the download link without the bells and whistles? You found it.</li>
+    </ul>
+
+    <hr>
+
+    <div class="center">
+      <p><b>Click below to get the Shortcut:</b></p>
+      <a class="btn-3d" href="https://www.icloud.com/shortcuts/958ad25d320f4a56905d4fac72233407">⬇ Download Now ⬇</a>
+    </div>
+
+    <hr>
+
+    <div class="badges">
+      <div class="badge-88">MADE ON<br>A MAC</div>
+      <div class="badge-88">100%<br>NO JAVA</div>
+      <div class="badge-88">BEST VIEWED<br>AT ANY SIZE</div>
+    </div>
+
+    <p class="center">You are visitor number <span class="counter">003841</span></p>
+
+    <p class="center"><a href="download.html">&laquo; Return to the Modern Site</a></p>
+
+  </div>
+
+  <div class="footer-strip">
+    © iOS-Hub — a Phone Manager Shortcut project · <a href="index.html">Home</a> · <a href="development.html">Development</a>
+  </div>
+</div>
+
+</body>
+</html>
