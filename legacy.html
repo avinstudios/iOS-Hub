@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iOS-Hub :: Legacy Download Page</title>
+<style>
+  body {
+    margin: 0;
+    background: #c0c0c0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23c0c0c0'/%3E%3Crect width='2' height='2' fill='%23b8b8b8'/%3E%3C/svg%3E");
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+  }
+
+  table.wrapper {
+    width: 600px;
+    margin: 20px auto;
+    border: 3px double #000080;
+    background: #ffffff;
+    border-collapse: collapse;
+  }
+
+  td { padding: 0; }
+
+  .titlebar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  .banner {
+    text-align: center;
+    padding: 14px 10px 6px;
+    border-bottom: 2px solid #000080;
+  }
+  .banner h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #0000ee;
+    text-shadow: 1px 1px 0 #999;
+    letter-spacing: 1px;
+  }
+  .banner .blink {
+    color: #ff0000;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+  .marquee-bar {
+    background: #000;
+    color: #0f0;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    padding: 4px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 2px solid #000080;
+  }
+  .marquee-bar span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 12s linear infinite;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .content {
+    padding: 18px 26px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .content hr {
+    border: none;
+    border-top: 2px groove #999;
+    margin: 16px 0;
+  }
+
+  .under-construction {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000;
+    background: #ffff00;
+    border: 2px solid #000;
+    padding: 3px 8px;
+    margin-bottom: 14px;
+  }
+  .caution-stripe {
+    width: 14px; height: 10px;
+    background: repeating-linear-gradient(45deg, #000, #000 3px, #ffff00 3px, #ffff00 6px);
+    border: 1px solid #000;
+    flex-shrink: 0;
+  }
+
+  ul.old-list {
+    padding-left: 22px;
+  }
+  ul.old-list li { margin-bottom: 6px; }
+
+  .btn-3d {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    background: #c0c0c0;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #404040;
+    border-bottom: 3px solid #404040;
+    padding: 10px 22px;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+  .btn-3d:active {
+    border-top: 3px solid #404040;
+    border-left: 3px solid #404040;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+  }
+
+  .center { text-align: center; }
+
+  .footer-strip {
+    background: #000080;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-align: center;
+    padding: 8px;
+    border-top: 2px solid #000;
+  }
+  .footer-strip a { color: #99ccff; }
+
+  .counter {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #0f0;
+    padding: 2px 6px;
+    letter-spacing: 2px;
+    border: 1px solid #333;
+  }
+
+  .badges {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin: 14px 0;
+    flex-wrap: wrap;
+  }
+  .badge-88 {
+    width: 88px; height: 31px;
+    background: #000;
+    color: #0f0;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  a { color: #0000ee; }
+  a:visited { color: #551a8b; }
+</style>
+</head>
+<body>
+
+<table class="wrapper" cellpadding="0" cellspacing="0">
+  <tr><td class="titlebar">iOS-Hub.exe — Legacy Download Page</td></tr>
+  <tr><td class="banner">
+    <h1>~ iOS-Hub ~</h1>
+    <div class="blink">*** LEGACY MODE ***</div>
+  </td></tr>
+  <tr><td class="marquee-bar"><span>WELCOME TO THE LEGACY DOWNLOAD PAGE *** NO FRILLS, NO FLASH, JUST THE LINK *** WORKS ON ANY BROWSER, ANY DEVICE, ANY YEAR *** </span></td></tr>
+
+  <tr><td class="content">
+
+    <div class="under-construction">
+      <span class="caution-stripe"></span> THIS PAGE IS INTENTIONALLY OLD-SCHOOL <span class="caution-stripe"></span>
+    </div>
+
+    <p>Welcome, traveler. You have reached the <b>Legacy Download Page</b> for iOS-Hub. This page was built for maximum compatibility — no glass, no gradients, no fancy animations. Just a link that works.</p>
+
+    <hr>
+
+    <p><b>Why use Legacy Mode?</b></p>
+    <ul class="old-list">
+      <li>Slow connection? This page loads instantly.</li>
+      <li>Old device or browser? This page doesn't care.</li>
+      <li>Just want the download link without the bells and whistles? You found it.</li>
+    </ul>
+
+    <hr>
+
+    <div class="center">
+      <p><b>Click below to get the Shortcut:</b></p>
+      <a class="btn-3d" href="https://www.icloud.com/shortcuts/958ad25d320f4a56905d4fac72233407">⬇ Download Now ⬇</a>
+    </div>
+
+    <hr>
+
+    <div class="badges">
+      <div class="badge-88">MADE ON<br>A MAC</div>
+      <div class="badge-88">100%<br>NO JAVA</div>
+      <div class="badge-88">BEST VIEWED<br>AT ANY SIZE</div>
+    </div>
+
+    <p class="center">You are visitor number <span class="counter">003841</span></p>
+
+    <p class="center"><a href="download.html">&laquo; Return to the Modern Site</a></p>
+
+  </td></tr>
+
+  <tr><td class="footer-strip">
+    © iOS-Hub — a Phone Manager Shortcut project · <a href="index.html">Home</a> · <a href="development.html">Development</a>
+  </td></tr>
+</table>
+
+</body>
+</html>
