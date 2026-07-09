@@ -7,6 +7,7 @@ We made stuff for every iOS version starting from iOS 26
 • IOS HUB is a Phone Manager Shortcut (PMS)
 • We Started on IOS 26 for this project
 • Of their is any issues let us know
+• Link: https://avinstudios.github.io/iOS-Hub/
 
 # 📀 How Get IOS Hub
 -------------------------------------------
