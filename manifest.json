@@ -1,0 +1,19 @@
+{
+  "name": "iOS-Hub Phone Manager",
+  "short_name": "iOS-Hub",
+  "description": "Phone Manager Shortcut companion app — utilities, device tools, and more.",
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06070b",
+  "theme_color": "#06070b",
+  "icons": [
+    {
+      "src": "assets/favicon.png",
+      "sizes": "657x657",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

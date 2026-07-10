@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iOS-Hub — Phone Manager Shortcut</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="iOS-Hub">
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="mesh"></div>
+
+<header>
+  <nav>
+    <span class="logo">iOS-Hub</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="download.html">Download</a>
+      <a href="development.html">Development</a>
+    </div>
+  </nav>
+</header>
+
+<div class="container" id="site-content">
+
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span> Built for iOS 26 and up</span>
+    <h1>Your phone,<br>fully in your hands.</h1>
+    <p class="lede">iOS-Hub is a Phone Manager Shortcut — one shortcut, a full set of controls, no app install required.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="download.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M6 11l6 6 6-6"/><path d="M5 21h14"/></svg>
+        Get iOS-Hub
+      </a>
+      <a class="btn btn-ghost" href="#info">Learn more</a>
+    </div>
+  </section>
+
+  <section class="stack" id="info">
+
+    <div class="card">
+      <div class="card-head">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+        </span>
+        <h2>What it is</h2>
+      </div>
+      <p>iOS-Hub is a Phone Manager Shortcut (PMS) — a single Apple Shortcut that gives you quick access to phone management tools, built specifically around iOS 26's new capabilities.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        </span>
+        <h2>Why iOS 26</h2>
+      </div>
+      <p>We started this project on iOS 26 to take advantage of the latest Shortcuts actions. Support for other versions is being explored — check the Download page for what's currently available.</p>
+      <span class="badge">Currently supports iOS 26</span>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </span>
+        <h2>Getting started</h2>
+      </div>
+      <ul>
+        <li>Head to the Download page and pick the card that matches your iOS version</li>
+        <li>Installing the wrong version's shortcut won't work — double-check first</li>
+        <li>Run into an issue? Let us know via the repo's Issues tab</li>
+      </ul>
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ===================== APP MODE (shown only when added to Home Screen) ===================== -->
+<div class="container" id="app-mode">
+
+  <div class="am-header">
+    <div class="am-app-badge">📲 App Mode</div>
+    <h1 class="logo" style="font-size:26px;">iOS-Hub</h1>
+    <p>Running as a home screen app</p>
+  </div>
+
+  <div class="am-tabs">
+    <div class="am-tab active" data-tab="apps">Apps</div>
+    <div class="am-tab" data-tab="utilities">Utilities</div>
+    <div class="am-tab" data-tab="device">Device</div>
+    <div class="am-tab" data-tab="notes">Notes</div>
+    <div class="am-tab" data-tab="info">Info</div>
+  </div>
+
+  <!-- APPS PANEL -->
+  <div class="am-panel active" id="panel-apps">
+    <div class="am-sub-tabs">
+      <div class="am-sub-tab active" data-sub="apps" data-group="apps">Apple Apps</div>
+      <div class="am-sub-tab" data-sub="google" data-group="apps">Google Apps</div>
+      <div class="am-sub-tab" data-sub="ai" data-group="apps">AI</div>
+    </div>
+
+    <div class="am-list am-group-apps" data-group-content="apps">
+      <a class="am-row" href="tel:">Phone <span class="arrow">↗</span></a>
+      <a class="am-row" href="sms:">Messages <span class="arrow">↗</span></a>
+      <a class="am-row" href="mailto:">Mail <span class="arrow">↗</span></a>
+      <a class="am-row" href="facetime:">FaceTime <span class="arrow">↗</span></a>
+      <a class="am-row" href="maps://">Maps <span class="arrow">↗</span></a>
+      <a class="am-row" href="calshow://">Calendar <span class="arrow">↗</span></a>
+      <a class="am-row" href="music://">Music <span class="arrow">↗</span></a>
+      <a class="am-row" href="itms-apps://">App Store <span class="arrow">↗</span></a>
+      <a class="am-row" href="mobilenotes://">Notes <span class="arrow">↗</span></a>
+      <a class="am-row" href="x-apple-reminderkit://">Reminders <span class="arrow">↗</span></a>
+    </div>
+
+    <div class="am-list am-group-apps" data-group-content="google" style="display:none;">
+      <a class="am-row" href="https://www.google.com" target="_blank">Google <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://www.google.com/chrome/" target="_blank">Chrome <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://www.youtube.com" target="_blank">YouTube <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://music.youtube.com" target="_blank">YouTube Music <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://studio.youtube.com" target="_blank">YouTube Studio <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://docs.google.com" target="_blank">Docs <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://sheets.google.com" target="_blank">Sheets <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://slides.google.com" target="_blank">Slides <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://maps.google.com" target="_blank">Google Maps <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://photos.google.com" target="_blank">Google Photos <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://drive.google.com" target="_blank">Google Drive <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://gemini.google.com" target="_blank">Google Gemini <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://mail.google.com" target="_blank">Gmail <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://calendar.google.com" target="_blank">Google Calendar <span class="arrow">↗</span></a>
+    </div>
+
+    <div class="am-list am-group-apps" data-group-content="ai" style="display:none;">
+      <a class="am-row" href="https://chatgpt.com/?utm=iOS26HUB" target="_blank">ChatGPT <span class="arrow">↗</span></a>
+      <a class="am-row" href="https://gemini.google.com/app?utm=iOS26HUB" target="_blank">Gemini <span class="arrow">↗</span></a>
+    </div>
+  </div>
+
+  <!-- UTILITIES PANEL -->
+  <div class="am-panel" id="panel-utilities">
+    <div class="am-sub-tabs">
+      <div class="am-sub-tab active" data-sub="calc" data-group="util">Calculator</div>
+      <div class="am-sub-tab" data-sub="pin" data-group="util">PIN Gen</div>
+      <div class="am-sub-tab" data-sub="dice" data-group="util">Dice/Coin</div>
+      <div class="am-sub-tab" data-sub="qr" data-group="util">QR Scan</div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="am-tool-card am-group-util" data-group-content="calc">
+      <div class="calc-display" id="calcDisplay">0</div>
+      <div class="calc-grid">
+        <button class="calc-btn" data-c="clear">C</button>
+        <button class="calc-btn" data-c="(">(</button>
+        <button class="calc-btn" data-c=")">)</button>
+        <button class="calc-btn op" data-c="/">÷</button>
+
+        <button class="calc-btn" data-c="7">7</button>
+        <button class="calc-btn" data-c="8">8</button>
+        <button class="calc-btn" data-c="9">9</button>
+        <button class="calc-btn op" data-c="*">×</button>
+
+        <button class="calc-btn" data-c="4">4</button>
+        <button class="calc-btn" data-c="5">5</button>
+        <button class="calc-btn" data-c="6">6</button>
+        <button class="calc-btn op" data-c="-">−</button>
+
+        <button class="calc-btn" data-c="1">1</button>
+        <button class="calc-btn" data-c="2">2</button>
+        <button class="calc-btn" data-c="3">3</button>
+        <button class="calc-btn op" data-c="+">+</button>
+
+        <button class="calc-btn wide" data-c="0">0</button>
+        <button class="calc-btn" data-c=".">.</button>
+        <button class="calc-btn op" data-c="=">=</button>
+      </div>
+    </div>
+
+    <!-- PIN Generator -->
+    <div class="am-tool-card am-group-util" data-group-content="pin" style="display:none;">
+      <h3>Random PIN Generator</h3>
+      <div class="pin-display" id="pinDisplay">••••</div>
+      <div class="pin-controls">
+        <label>Length</label>
+        <input type="range" id="pinLength" min="4" max="8" value="4">
+        <span class="pin-len-val" id="pinLenVal">4</span>
+      </div>
+      <button class="btn btn-primary" style="width:100%; justify-content:center;" id="pinGenBtn">Generate PIN</button>
+    </div>
+
+    <!-- Dice / Coin -->
+    <div class="am-tool-card am-group-util" data-group-content="dice" style="display:none;">
+      <h3>Coin Flip / Dice Roller</h3>
+      <div class="dice-result" id="diceResult">🎲</div>
+      <div class="dice-sub" id="diceSub">Pick an option below</div>
+      <div class="dice-btn-row">
+        <button class="btn btn-ghost" id="btnCoin">Flip Coin</button>
+        <button class="btn btn-ghost" id="btnDie1">Roll 1 Die</button>
+        <button class="btn btn-ghost" id="btnDie2">Roll 2 Dice</button>
+      </div>
+    </div>
+
+    <!-- QR Scanner -->
+    <div class="am-tool-card am-group-util" data-group-content="qr" style="display:none;">
+      <h3>QR Scanner</h3>
+      <div class="qr-video-wrap">
+        <video id="qrVideo" playsinline muted></video>
+      </div>
+      <div class="qr-result" id="qrResult">No code scanned yet</div>
+      <div class="am-btn-row">
+        <button class="btn btn-primary" id="qrStartBtn">Start Camera</button>
+        <button class="btn btn-ghost" id="qrOpenBtn" style="display:none;">Open Result</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEVICE PANEL -->
+  <div class="am-panel" id="panel-device">
+    <div class="info-grid">
+      <div class="info-row"><span class="label">Connection</span><span class="value" id="devConnection">Checking…</span></div>
+      <div class="info-row"><span class="label">Network type</span><span class="value" id="devNetType">—</span></div>
+      <div class="info-row"><span class="label">Screen size</span><span class="value" id="devScreen">—</span></div>
+      <div class="info-row"><span class="label">Orientation</span><span class="value" id="devOrientation">—</span></div>
+      <div class="info-row"><span class="label">Storage used</span><span class="value" id="devStorage">Checking…</span></div>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Clipboard</h3>
+      <div class="qr-result" id="clipboardResult" style="margin-bottom:12px;">Nothing checked yet</div>
+      <div class="am-btn-row">
+        <button class="btn btn-primary" id="clipboardReadBtn">Read Clipboard</button>
+        <button class="btn btn-ghost" id="clipboardClearBtn">Clear Clipboard</button>
+      </div>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Screen &amp; Display</h3>
+      <div class="am-btn-row" style="margin-bottom:10px;">
+        <button class="btn btn-ghost" id="wakeLockBtn">🔆 Keep Screen Awake: Off</button>
+      </div>
+      <div class="am-btn-row">
+        <button class="btn btn-ghost" id="fullscreenBtn">⛶ Enter Full Screen</button>
+      </div>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Device Test</h3>
+      <div class="am-btn-row" style="margin-bottom:10px;">
+        <button class="btn btn-ghost" id="motionBtn" style="width:100%; justify-content:center;">🧭 Test Motion Sensor</button>
+      </div>
+      <div class="info-grid" id="motionReadout" style="display:none;">
+        <div class="info-row"><span class="label">Tilt X</span><span class="value" id="motionX">0.0°</span></div>
+        <div class="info-row"><span class="label">Tilt Y</span><span class="value" id="motionY">0.0°</span></div>
+        <div class="info-row"><span class="label">Tilt Z</span><span class="value" id="motionZ">0.0°</span></div>
+      </div>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Storage Management</h3>
+      <div class="info-grid" style="margin-bottom:12px;">
+        <div class="info-row"><span class="label">App data (Notes, settings)</span><span class="value" id="storageAppSize">Checking…</span></div>
+        <div class="info-row"><span class="label">Offline cache</span><span class="value" id="storageCacheSize">Checking…</span></div>
+      </div>
+      <p style="font-size:13px; color:var(--text-dim); margin:0 0 12px; line-height:1.5;">Clears saved Notes, theme preference, and offline cache from this device.</p>
+      <button class="btn btn-ghost" id="clearDataBtn" style="width:100%; justify-content:center;">🗑 Clear App Data</button>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Permissions</h3>
+      <div class="am-list" id="permissionsList">
+        <div class="am-row"><span>Camera</span><span class="value" id="permCamera">Unknown</span></div>
+        <div class="am-row"><span>Microphone</span><span class="value" id="permMic">Unknown</span></div>
+        <div class="am-row"><span>Location</span><span class="value" id="permLocation">Unknown</span></div>
+        <div class="am-row"><span>Notifications</span><span class="value" id="permNotifications">Unknown</span></div>
+        <div class="am-row"><span>Clipboard</span><span class="value" id="permClipboard">Unknown</span></div>
+      </div>
+      <button class="btn btn-ghost" id="refreshPermsBtn" style="width:100%; justify-content:center; margin-top:10px;">🔄 Refresh Permission Status</button>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Network Speed Test</h3>
+      <div class="info-grid" style="margin-bottom:12px;">
+        <div class="info-row"><span class="label">Download speed</span><span class="value" id="speedResult">Not tested</span></div>
+        <div class="info-row"><span class="label">Latency</span><span class="value" id="latencyResult">Not tested</span></div>
+      </div>
+      <button class="btn btn-primary" id="speedTestBtn" style="width:100%; justify-content:center;">📶 Run Speed Test</button>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Location</h3>
+      <div class="qr-result" id="locationResult" style="margin-bottom:12px;">Not checked yet</div>
+      <button class="btn btn-ghost" id="locationBtn" style="width:100%; justify-content:center;">📍 Get Current Location</button>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Speaker Test</h3>
+      <p style="font-size:13px; color:var(--text-dim); margin:0 0 12px; line-height:1.5;">Plays a short tone to check your speaker and volume.</p>
+      <button class="btn btn-ghost" id="soundTestBtn" style="width:100%; justify-content:center;">🔊 Play Test Tone</button>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Focus Timer</h3>
+      <div class="pin-display" id="focusDisplay" style="color:var(--text); font-size:26px;">05:00</div>
+      <div class="am-btn-row" style="margin-bottom:10px;">
+        <button class="btn btn-ghost" id="focus5Btn">5 min</button>
+        <button class="btn btn-ghost" id="focus15Btn">15 min</button>
+        <button class="btn btn-ghost" id="focus25Btn">25 min</button>
+      </div>
+      <button class="btn btn-primary" id="focusStartBtn" style="width:100%; justify-content:center;">Start Focus Timer</button>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Session</h3>
+      <div class="info-row"><span class="label">Time in App</span><span class="value" id="sessionTime">0:00</span></div>
+    </div>
+  </div>
+
+  <!-- NOTES PANEL -->
+  <div class="am-panel" id="panel-notes">
+    <div class="am-tool-card">
+      <h3>Notes</h3>
+      <textarea id="notesArea" placeholder="Jot something down… it's saved automatically on this device."
+        style="width:100%; min-height:220px; padding:14px; border-radius:14px; background:var(--glass); border:1px solid var(--glass-border); color:var(--text); font-size:15px; font-family:inherit; resize:vertical; line-height:1.6;"></textarea>
+      <div class="am-btn-row" style="margin-top:10px;">
+        <button class="btn btn-ghost" id="notesClearBtn">Clear Notes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="am-panel" id="panel-info">
+    <div class="info-grid">
+      <div class="info-row"><span class="label">Version</span><span class="value">v1.1</span></div>
+      <div class="info-row"><span class="label">Mode</span><span class="value">Home Screen App</span></div>
+      <div class="info-row"><span class="label">Time</span><span class="value" id="infoTime">—</span></div>
+      <div class="info-row"><span class="label">Currently supports</span><span class="value">iOS 26</span></div>
+      <div class="info-row"><span class="label">In development</span><span class="value">"Golden Oreo" (iOS 27)</span></div>
+    </div>
+
+    <div class="am-tool-card" style="margin-top:14px;">
+      <h3>Theme</h3>
+      <div class="am-btn-row">
+        <button class="btn btn-primary" id="themeDarkBtn">🌙 Dark</button>
+        <button class="btn btn-ghost" id="themeLightBtn">☀️ Light</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer id="site-footer">
+  iOS-Hub · a Phone Manager Shortcut project
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsqr/1.4.0/jsQR.js"></script>
+<script>
+  // Register the service worker (enables offline support + local notifications)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function (err) {
+        console.warn('Service worker registration failed:', err);
+      });
+    });
+  }
+</script>
+<script src="app.js"></script>
+</body>
+</html>
